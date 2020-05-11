@@ -1,0 +1,844 @@
+
+R version 4.0.0 (2020-04-24) -- "Arbor Day"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: i386-w64-mingw32/i386 (32-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> install.packages("caret")
+Installing package into ‘C:/Users/GOOD/Documents/R/win-library/4.0’
+(as ‘lib’ is unspecified)
+--- Please select a CRAN mirror for use in this session ---
+Warning: failed to download mirrors file (cannot open URL 'https://cran.r-project.org/CRAN_mirrors.csv'); using local file 'C:/PROGRA~1/R/R-40~1.0/doc/CRAN_mirrors.csv'
+Warning: unable to access index for repository https://cloud.r-project.org/src/contrib:
+  cannot open URL 'https://cloud.r-project.org/src/contrib/PACKAGES'
+Warning: unable to access index for repository https://cloud.r-project.org/bin/windows/contrib/4.0:
+  cannot open URL 'https://cloud.r-project.org/bin/windows/contrib/4.0/PACKAGES'
+Warning messages:
+1: In download.file(url, destfile = f, quiet = TRUE) :
+  InternetOpenUrl failed: 'The certificate authority is invalid or incorrect'
+2: package ‘caret’ is not available (for R version 4.0.0) 
+> install.packages('package-name',repos='http://cran.us.r-project.org')
+Installing package into ‘C:/Users/GOOD/Documents/R/win-library/4.0’
+(as ‘lib’ is unspecified)
+Warning message:
+package ‘package-name’ is not available (for R version 4.0.0) 
+> install.packages('caret',repos='http://cran.us.r-project.org')
+Installing package into ‘C:/Users/GOOD/Documents/R/win-library/4.0’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘ps’, ‘processx’, ‘callr’, ‘prettyunits’, ‘backports’, ‘desc’, ‘pkgbuild’, ‘rprojroot’, ‘rstudioapi’, ‘numDeriv’, ‘SQUAREM’, ‘evaluate’, ‘pkgload’, ‘praise’, ‘colorspace’, ‘utf8’, ‘lava’, ‘testthat’, ‘farver’, ‘labeling’, ‘munsell’, ‘R6’, ‘RColorBrewer’, ‘viridisLite’, ‘lifecycle’, ‘cli’, ‘crayon’, ‘ellipsis’, ‘fansi’, ‘pillar’, ‘pkgconfig’, ‘vctrs’, ‘stringi’, ‘assertthat’, ‘BH’, ‘plogr’, ‘prodlim’, ‘digest’, ‘glue’, ‘gtable’, ‘isoband’, ‘rlang’, ‘scales’, ‘tibble’, ‘iterators’, ‘Rcpp’, ‘data.table’, ‘stringr’, ‘dplyr’, ‘generics’, ‘gower’, ‘ipred’, ‘lubridate’, ‘magrittr’, ‘purrr’, ‘tidyr’, ‘tidyselect’, ‘timeDate’, ‘ggplot2’, ‘foreach’, ‘plyr’, ‘ModelMetrics’, ‘reshape2’, ‘recipes’, ‘withr’, ‘pROC’
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/ps_1.3.3.zip'
+Content type 'application/zip' length 700255 bytes (683 KB)
+downloaded 683 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/processx_3.4.2.zip'
+Content type 'application/zip' length 1121192 bytes (1.1 MB)
+downloaded 1.1 MB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/callr_3.4.3.zip'
+Content type 'application/zip' length 388726 bytes (379 KB)
+downloaded 379 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/prettyunits_1.1.1.zip'
+Content type 'application/zip' length 37587 bytes (36 KB)
+downloaded 36 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/backports_1.1.6.zip'
+Content type 'application/zip' length 77609 bytes (75 KB)
+downloaded 75 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/desc_1.2.0.zip'
+Content type 'application/zip' length 282492 bytes (275 KB)
+downloaded 275 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/pkgbuild_1.0.8.zip'
+Content type 'application/zip' length 138379 bytes (135 KB)
+downloaded 135 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/rprojroot_1.3-2.zip'
+Content type 'application/zip' length 84600 bytes (82 KB)
+downloaded 82 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/rstudioapi_0.11.zip'
+Content type 'application/zip' length 280182 bytes (273 KB)
+downloaded 273 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/numDeriv_2016.8-1.1.zip'
+Content type 'application/zip' length 116026 bytes (113 KB)
+downloaded 113 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/SQUAREM_2020.2.zip'
+Content type 'application/zip' length 180181 bytes (175 KB)
+downloaded 175 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/evaluate_0.14.zip'
+Content type 'application/zip' length 76433 bytes (74 KB)
+downloaded 74 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/pkgload_1.0.2.zip'
+Content type 'application/zip' length 157113 bytes (153 KB)
+downloaded 153 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/praise_1.0.0.zip'
+Content type 'application/zip' length 19621 bytes (19 KB)
+downloaded 19 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/colorspace_1.4-1.zip'
+Content type 'application/zip' length 2595946 bytes (2.5 MB)
+downloaded 2.5 MB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/utf8_1.1.4.zip'
+Content type 'application/zip' length 208640 bytes (203 KB)
+downloaded 203 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/lava_1.6.7.zip'
+Content type 'application/zip' length 2174166 bytes (2.1 MB)
+downloaded 2.1 MB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/testthat_2.3.2.zip'
+Content type 'application/zip' length 1973895 bytes (1.9 MB)
+downloaded 1.9 MB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/farver_2.0.3.zip'
+Content type 'application/zip' length 1693979 bytes (1.6 MB)
+downloaded 1.6 MB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/labeling_0.3.zip'
+Content type 'application/zip' length 62226 bytes (60 KB)
+downloaded 60 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/munsell_0.5.0.zip'
+Content type 'application/zip' length 244590 bytes (238 KB)
+downloaded 238 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/R6_2.4.1.zip'
+Content type 'application/zip' length 59115 bytes (57 KB)
+downloaded 57 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/RColorBrewer_1.1-2.zip'
+Content type 'application/zip' length 55583 bytes (54 KB)
+downloaded 54 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/viridisLite_0.3.0.zip'
+Content type 'application/zip' length 60503 bytes (59 KB)
+downloaded 59 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/lifecycle_0.2.0.zip'
+Content type 'application/zip' length 101547 bytes (99 KB)
+downloaded 99 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/cli_2.0.2.zip'
+Content type 'application/zip' length 399589 bytes (390 KB)
+downloaded 390 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/crayon_1.3.4.zip'
+Content type 'application/zip' length 749794 bytes (732 KB)
+downloaded 732 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/ellipsis_0.3.0.zip'
+Content type 'application/zip' length 44559 bytes (43 KB)
+downloaded 43 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/fansi_0.4.1.zip'
+Content type 'application/zip' length 222658 bytes (217 KB)
+downloaded 217 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/pillar_1.4.4.zip'
+Content type 'application/zip' length 185291 bytes (180 KB)
+downloaded 180 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/pkgconfig_2.0.3.zip'
+Content type 'application/zip' length 22261 bytes (21 KB)
+downloaded 21 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/vctrs_0.2.4.zip'
+Content type 'application/zip' length 999722 bytes (976 KB)
+downloaded 976 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/stringi_1.4.6.zip'
+Content type 'application/zip' length 15217051 bytes (14.5 MB)
+downloaded 14.5 MB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/assertthat_0.2.1.zip'
+Content type 'application/zip' length 54740 bytes (53 KB)
+downloaded 53 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/BH_1.72.0-3.zip'
+Content type 'application/zip' length 18270708 bytes (17.4 MB)
+downloaded 17.4 MB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/plogr_0.2.0.zip'
+Content type 'application/zip' length 18838 bytes (18 KB)
+downloaded 18 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/prodlim_2019.11.13.zip'
+Content type 'application/zip' length 420761 bytes (410 KB)
+downloaded 410 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/digest_0.6.25.zip'
+Content type 'application/zip' length 244529 bytes (238 KB)
+downloaded 238 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/glue_1.4.0.zip'
+Content type 'application/zip' length 158875 bytes (155 KB)
+downloaded 155 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/gtable_0.3.0.zip'
+Content type 'application/zip' length 434026 bytes (423 KB)
+downloaded 423 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/isoband_0.2.1.zip'
+Content type 'application/zip' length 3472903 bytes (3.3 MB)
+downloaded 3.3 MB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/rlang_0.4.6.zip'
+Content type 'application/zip' length 1107919 bytes (1.1 MB)
+downloaded 1.1 MB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/scales_1.1.0.zip'
+Content type 'application/zip' length 552457 bytes (539 KB)
+downloaded 539 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/tibble_3.0.1.zip'
+Content type 'application/zip' length 410166 bytes (400 KB)
+downloaded 400 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/iterators_1.0.12.zip'
+Content type 'application/zip' length 342761 bytes (334 KB)
+downloaded 334 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/Rcpp_1.0.4.6.zip'
+Content type 'application/zip' length 3167654 bytes (3.0 MB)
+downloaded 3.0 MB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/data.table_1.12.8.zip'
+Content type 'application/zip' length 2326152 bytes (2.2 MB)
+downloaded 2.2 MB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/stringr_1.4.0.zip'
+Content type 'application/zip' length 216475 bytes (211 KB)
+downloaded 211 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/dplyr_0.8.5.zip'
+Content type 'application/zip' length 3295376 bytes (3.1 MB)
+downloaded 3.1 MB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/generics_0.0.2.zip'
+Content type 'application/zip' length 63178 bytes (61 KB)
+downloaded 61 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/gower_0.2.1.zip'
+Content type 'application/zip' length 297686 bytes (290 KB)
+downloaded 290 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/ipred_0.9-9.zip'
+Content type 'application/zip' length 398505 bytes (389 KB)
+downloaded 389 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/lubridate_1.7.8.zip'
+Content type 'application/zip' length 1735605 bytes (1.7 MB)
+downloaded 1.7 MB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/magrittr_1.5.zip'
+Content type 'application/zip' length 157436 bytes (153 KB)
+downloaded 153 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/purrr_0.3.4.zip'
+Content type 'application/zip' length 428050 bytes (418 KB)
+downloaded 418 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/tidyr_1.0.3.zip'
+Content type 'application/zip' length 1481575 bytes (1.4 MB)
+downloaded 1.4 MB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/tidyselect_1.0.0.zip'
+Content type 'application/zip' length 244657 bytes (238 KB)
+downloaded 238 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/timeDate_3043.102.zip'
+Content type 'application/zip' length 1549695 bytes (1.5 MB)
+downloaded 1.5 MB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/ggplot2_3.3.0.zip'
+Content type 'application/zip' length 4011326 bytes (3.8 MB)
+downloaded 3.8 MB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/foreach_1.5.0.zip'
+Content type 'application/zip' length 145315 bytes (141 KB)
+downloaded 141 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/plyr_1.8.6.zip'
+Content type 'application/zip' length 1496938 bytes (1.4 MB)
+downloaded 1.4 MB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/ModelMetrics_1.2.2.2.zip'
+Content type 'application/zip' length 852572 bytes (832 KB)
+downloaded 832 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/reshape2_1.4.4.zip'
+Content type 'application/zip' length 814582 bytes (795 KB)
+downloaded 795 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/recipes_0.1.12.zip'
+Content type 'application/zip' length 1113232 bytes (1.1 MB)
+downloaded 1.1 MB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/withr_2.2.0.zip'
+Content type 'application/zip' length 206617 bytes (201 KB)
+downloaded 201 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/pROC_1.16.2.zip'
+Content type 'application/zip' length 1510074 bytes (1.4 MB)
+downloaded 1.4 MB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/caret_6.0-86.zip'
+Content type 'application/zip' length 6253091 bytes (6.0 MB)
+downloaded 6.0 MB
+
+package ‘ps’ successfully unpacked and MD5 sums checked
+package ‘processx’ successfully unpacked and MD5 sums checked
+package ‘callr’ successfully unpacked and MD5 sums checked
+package ‘prettyunits’ successfully unpacked and MD5 sums checked
+package ‘backports’ successfully unpacked and MD5 sums checked
+package ‘desc’ successfully unpacked and MD5 sums checked
+package ‘pkgbuild’ successfully unpacked and MD5 sums checked
+package ‘rprojroot’ successfully unpacked and MD5 sums checked
+package ‘rstudioapi’ successfully unpacked and MD5 sums checked
+package ‘numDeriv’ successfully unpacked and MD5 sums checked
+package ‘SQUAREM’ successfully unpacked and MD5 sums checked
+package ‘evaluate’ successfully unpacked and MD5 sums checked
+package ‘pkgload’ successfully unpacked and MD5 sums checked
+package ‘praise’ successfully unpacked and MD5 sums checked
+package ‘colorspace’ successfully unpacked and MD5 sums checked
+package ‘utf8’ successfully unpacked and MD5 sums checked
+package ‘lava’ successfully unpacked and MD5 sums checked
+package ‘testthat’ successfully unpacked and MD5 sums checked
+package ‘farver’ successfully unpacked and MD5 sums checked
+package ‘labeling’ successfully unpacked and MD5 sums checked
+package ‘munsell’ successfully unpacked and MD5 sums checked
+package ‘R6’ successfully unpacked and MD5 sums checked
+package ‘RColorBrewer’ successfully unpacked and MD5 sums checked
+package ‘viridisLite’ successfully unpacked and MD5 sums checked
+package ‘lifecycle’ successfully unpacked and MD5 sums checked
+package ‘cli’ successfully unpacked and MD5 sums checked
+package ‘crayon’ successfully unpacked and MD5 sums checked
+package ‘ellipsis’ successfully unpacked and MD5 sums checked
+package ‘fansi’ successfully unpacked and MD5 sums checked
+package ‘pillar’ successfully unpacked and MD5 sums checked
+package ‘pkgconfig’ successfully unpacked and MD5 sums checked
+package ‘vctrs’ successfully unpacked and MD5 sums checked
+package ‘stringi’ successfully unpacked and MD5 sums checked
+package ‘assertthat’ successfully unpacked and MD5 sums checked
+package ‘BH’ successfully unpacked and MD5 sums checked
+package ‘plogr’ successfully unpacked and MD5 sums checked
+package ‘prodlim’ successfully unpacked and MD5 sums checked
+package ‘digest’ successfully unpacked and MD5 sums checked
+package ‘glue’ successfully unpacked and MD5 sums checked
+package ‘gtable’ successfully unpacked and MD5 sums checked
+package ‘isoband’ successfully unpacked and MD5 sums checked
+package ‘rlang’ successfully unpacked and MD5 sums checked
+package ‘scales’ successfully unpacked and MD5 sums checked
+package ‘tibble’ successfully unpacked and MD5 sums checked
+package ‘iterators’ successfully unpacked and MD5 sums checked
+package ‘Rcpp’ successfully unpacked and MD5 sums checked
+package ‘data.table’ successfully unpacked and MD5 sums checked
+package ‘stringr’ successfully unpacked and MD5 sums checked
+package ‘dplyr’ successfully unpacked and MD5 sums checked
+package ‘generics’ successfully unpacked and MD5 sums checked
+package ‘gower’ successfully unpacked and MD5 sums checked
+package ‘ipred’ successfully unpacked and MD5 sums checked
+package ‘lubridate’ successfully unpacked and MD5 sums checked
+package ‘magrittr’ successfully unpacked and MD5 sums checked
+package ‘purrr’ successfully unpacked and MD5 sums checked
+package ‘tidyr’ successfully unpacked and MD5 sums checked
+package ‘tidyselect’ successfully unpacked and MD5 sums checked
+package ‘timeDate’ successfully unpacked and MD5 sums checked
+package ‘ggplot2’ successfully unpacked and MD5 sums checked
+package ‘foreach’ successfully unpacked and MD5 sums checked
+package ‘plyr’ successfully unpacked and MD5 sums checked
+package ‘ModelMetrics’ successfully unpacked and MD5 sums checked
+package ‘reshape2’ successfully unpacked and MD5 sums checked
+package ‘recipes’ successfully unpacked and MD5 sums checked
+package ‘withr’ successfully unpacked and MD5 sums checked
+package ‘pROC’ successfully unpacked and MD5 sums checked
+package ‘caret’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\GOOD\AppData\Local\Temp\Rtmpuwt8Yl\downloaded_packages
+> find.package('rpart')
+[1] "C:/Program Files/R/R-4.0.0/library/rpart"
+> library(RColorBrewer)
+> library(rattle)
+Error in library(rattle) : there is no package called ‘rattle’
+> install.packages("rattle")
+Installing package into ‘C:/Users/GOOD/Documents/R/win-library/4.0’
+(as ‘lib’ is unspecified)
+Warning: unable to access index for repository https://cloud.r-project.org/src/contrib:
+  cannot open URL 'https://cloud.r-project.org/src/contrib/PACKAGES'
+Warning: unable to access index for repository https://cloud.r-project.org/bin/windows/contrib/4.0:
+  cannot open URL 'https://cloud.r-project.org/bin/windows/contrib/4.0/PACKAGES'
+Warning message:
+package ‘rattle’ is not available (for R version 4.0.0) 
+> install.packages('rattle',repos='http://cran.us.r-project.org')
+Installing package into ‘C:/Users/GOOD/Documents/R/win-library/4.0’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘XML’, ‘rpart.plot’
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/XML_3.99-0.3.zip'
+Content type 'application/zip' length 4258080 bytes (4.1 MB)
+downloaded 4.1 MB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/rpart.plot_3.0.8.zip'
+Content type 'application/zip' length 1075507 bytes (1.0 MB)
+downloaded 1.0 MB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/rattle_5.3.0.zip'
+Content type 'application/zip' length 5317106 bytes (5.1 MB)
+downloaded 5.1 MB
+
+package ‘XML’ successfully unpacked and MD5 sums checked
+package ‘rpart.plot’ successfully unpacked and MD5 sums checked
+package ‘rattle’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\GOOD\AppData\Local\Temp\Rtmpuwt8Yl\downloaded_packages
+> set.seed(1200)
+> library(knitr)
+Error in library(knitr) : there is no package called ‘knitr’
+> library(caret)
+Loading required package: lattice
+Loading required package: ggplot2
+> library(rpart)
+> library(rpart.plot)
+> library(rattle)
+Rattle: A free graphical interface for data science with R.
+Version 5.3.0 Copyright (c) 2006-2018 Togaware Pty Ltd.
+Type 'rattle()' to shake, rattle, and roll your data.
+> library(randomForest)
+Error in library(randomForest) : 
+  there is no package called ‘randomForest’
+> library(corrplot)
+Error in library(corrplot) : there is no package called ‘corrplot’
+> install.packages('knitr',repos='http://cran.us.r-project.org')
+Installing package into ‘C:/Users/GOOD/Documents/R/win-library/4.0’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘mime’, ‘highr’, ‘markdown’, ‘yaml’, ‘xfun’
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/mime_0.9.zip'
+Content type 'application/zip' length 48290 bytes (47 KB)
+downloaded 47 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/highr_0.8.zip'
+Content type 'application/zip' length 48570 bytes (47 KB)
+downloaded 47 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/markdown_1.1.zip'
+Content type 'application/zip' length 188474 bytes (184 KB)
+downloaded 184 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/yaml_2.2.1.zip'
+Content type 'application/zip' length 207774 bytes (202 KB)
+downloaded 202 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/xfun_0.13.zip'
+Content type 'application/zip' length 188068 bytes (183 KB)
+downloaded 183 KB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/knitr_1.28.zip'
+Content type 'application/zip' length 1429966 bytes (1.4 MB)
+downloaded 1.4 MB
+
+package ‘mime’ successfully unpacked and MD5 sums checked
+package ‘highr’ successfully unpacked and MD5 sums checked
+package ‘markdown’ successfully unpacked and MD5 sums checked
+package ‘yaml’ successfully unpacked and MD5 sums checked
+package ‘xfun’ successfully unpacked and MD5 sums checked
+package ‘knitr’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\GOOD\AppData\Local\Temp\Rtmpuwt8Yl\downloaded_packages
+> install.packages('rpart.plot',repos='http://cran.us.r-project.org')
+Warning: package ‘rpart.plot’ is in use and will not be installed
+> install.packages('randomforest',repos='http://cran.us.r-project.org')
+Installing package into ‘C:/Users/GOOD/Documents/R/win-library/4.0’
+(as ‘lib’ is unspecified)
+Warning messages:
+1: package ‘randomforest’ is not available (for R version 4.0.0) 
+2: Perhaps you meant ‘randomForest’ ? 
+> install.packages('randomForest',repos='http://cran.us.r-project.org')
+Installing package into ‘C:/Users/GOOD/Documents/R/win-library/4.0’
+(as ‘lib’ is unspecified)
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/randomForest_4.6-14.zip'
+Content type 'application/zip' length 249501 bytes (243 KB)
+downloaded 243 KB
+
+package ‘randomForest’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\GOOD\AppData\Local\Temp\Rtmpuwt8Yl\downloaded_packages
+> install.packages('corrplot',repos='http://cran.us.r-project.org')
+Installing package into ‘C:/Users/GOOD/Documents/R/win-library/4.0’
+(as ‘lib’ is unspecified)
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/corrplot_0.84.zip'
+Content type 'application/zip' length 5450134 bytes (5.2 MB)
+downloaded 5.2 MB
+
+package ‘corrplot’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\GOOD\AppData\Local\Temp\Rtmpuwt8Yl\downloaded_packages
+> # set the URL for the download
+> UrlTrain <- "http://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv"
+> UrlTest  <- "http://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv"
+> # download the datasets
+> training <- read.csv(url(UrlTrain))
+
+> testing  <- read.csv(url(UrlTest))
+> 
+> # create a partition with the training dataset 
+> inTrain  <- createDataPartition(training$classe, p=0.7, list=FALSE)
+Error in createDataPartition(training$classe, p = 0.7, list = FALSE) : 
+  object 'training' not found
+> TrainSet <- training[inTrain, ]
+Error: object 'training' not found
+> TestSet  <- training[-inTrain, ]
+Error: object 'training' not found
+> training <- read.csv("E:/PMLC/pml-training.csv", na.strings=c("NA","#DIV/0!",""))
+>  testing <- read.csv("E:/PMLC/pml-testing.csv", na.strings=c("NA","#DIV/0!",""))
+> inTrain  <- createDataPartition(training$classe, p=0.7, list=FALSE)
+> TrainSet <- training[inTrain, ]
+> TestSet  <- training[-inTrain, ]
+> dim(TrainSet)
+[1] 13737   160
+> dim(TestSet)
+[1] 5885  160
+> # remove variables with Nearly Zero Variance
+> NZV <- nearZeroVar(TrainSet)
+> TrainSet <- TrainSet[, -NZV]
+> TestSet  <- TestSet[, -NZV]
+> dim(TrainSet)
+[1] 13737   132
+> dim(TestSet)
+[1] 5885  132
+> # remove variables that are mostly NA
+> AllNA    <- sapply(TrainSet, function(x) mean(is.na(x))) > 0.95
+> TrainSet <- TrainSet[, AllNA==FALSE]
+> TestSet  <- TestSet[, AllNA==FALSE]
+> dim(TrainSet)
+[1] 13737    59
+> dim(TestSet)
+[1] 5885   59
+> # remove identification only variables (columns 1 to 5)
+> TrainSet <- TrainSet[, -(1:5)]
+> TestSet  <- TestSet[, -(1:5)]
+> dim(TrainSet)
+[1] 13737    54
+> dim(TestSet)
+[1] 5885   54
+> corMatrix <- cor(TrainSet[, -54])
+> corrplot(corMatrix, order = "FPC", method = "color", type = "lower", 
++ tl.cex = 0.8, tl.col = rgb(0, 0, 0))
+Error in corrplot(corMatrix, order = "FPC", method = "color", type = "lower",  : 
+  could not find function "corrplot"
+> install.packages('corrplot',repos='http://cran.us.r-project.org')
+Installing package into ‘C:/Users/GOOD/Documents/R/win-library/4.0’
+(as ‘lib’ is unspecified)
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/corrplot_0.84.zip'
+Content type 'application/zip' length 5450134 bytes (5.2 MB)
+downloaded 5.2 MB
+
+package ‘corrplot’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\GOOD\AppData\Local\Temp\Rtmpuwt8Yl\downloaded_packages
+> corMatrix <- cor(TrainSet[, -54])
+> corrplot(corMatrix, order = "FPC", method = "color", type = "lower", 
++          tl.cex = 0.8, tl.col = rgb(0, 0, 0))
+Error in corrplot(corMatrix, order = "FPC", method = "color", type = "lower",  : 
+  could not find function "corrplot"
+> # model fit
+> set.seed(12345)
+> controlRF <- trainControl(method="cv", number=3, verboseIter=FALSE)
+> modFitRandForest <- train(classe ~ ., data=TrainSet, method="rf",
++                           trControl=controlRF)
+Error: package e1071 is required
+> modFitRandForest$finalModel
+Error: object 'modFitRandForest' not found
+> myNZVvars <- names(myTraining) %in% c("new_window", "kurtosis_roll_belt", "kurtosis_picth_belt",
++ + "kurtosis_yaw_belt", "skewness_roll_belt", "skewness_roll_belt.1", "skewness_yaw_belt",
++ + "max_yaw_belt", "min_yaw_belt", "amplitude_yaw_belt", "avg_roll_arm", "stddev_roll_arm",
++ + "var_roll_arm", "avg_pitch_arm", "stddev_pitch_arm", "var_pitch_arm", "avg_yaw_arm",
++ + "stddev_yaw_arm", "var_yaw_arm", "kurtosis_roll_arm", "kurtosis_picth_arm",
++ + "kurtosis_yaw_arm", "skewness_roll_arm", "skewness_pitch_arm", "skewness_yaw_arm",
++ + "max_roll_arm", "min_roll_arm", "min_pitch_arm", "amplitude_roll_arm", "amplitude_pitch_arm",
++ + "kurtosis_roll_dumbbell", "kurtosis_picth_dumbbell", "kurtosis_yaw_dumbbell", "skewness_roll_dumbbell",
++ + "skewness_pitch_dumbbell", "skewness_yaw_dumbbell", "max_yaw_dumbbell", "min_yaw_dumbbell",
++ + "amplitude_yaw_dumbbell", "kurtosis_roll_forearm", "kurtosis_picth_forearm", "kurtosis_yaw_forearm",
++ + "skewness_roll_forearm", "skewness_pitch_forearm", "skewness_yaw_forearm", "max_roll_forearm",
++ + "max_yaw_forearm", "min_roll_forearm", "min_yaw_forearm", "amplitude_roll_forearm",
++ + "amplitude_yaw_forearm", "avg_roll_forearm", "stddev_roll_forearm", "var_roll_forearm",
++ + "avg_pitch_forearm", "stddev_pitch_forearm", "var_pitch_forearm", "avg_yaw_forearm",
++ + "stddev_yaw_forearm", "var_yaw_forearm")
+Error in names(myTraining) %in% c("new_window", "kurtosis_roll_belt",  : 
+  object 'myTraining' not found
+
+> > source("C:\\Users\\GOOD\\Desktop\\abc.R")
+Error in file(filename, "r", encoding = encoding) : 
+  cannot open the connection
+In addition: Warning message:
+In file(filename, "r", encoding = encoding) :
+  cannot open file 'C:\Users\GOOD\Desktop\abc.R': No such file or directory
+> local({fn<-choose.files(filters=Filters[c('R','txt','All'),],index=4)
++ file.show(fn,header=fn,title='')})
+> # model fit
+> set.seed(12345)
+> controlRF <- trainControl(method="cv", number=3, verboseIter=FALSE)
+> modFitRandForest <- train(classe ~ ., data=TrainSet, method="rf",
++                           trControl=controlRF)
+Error: package e1071 is required
+> modFitRandForest$finalModel
+Error: object 'modFitRandForest' not found
+> install.packages('e1071',repos='http://cran.us.r-project.org')
+Installing package into ‘C:/Users/GOOD/Documents/R/win-library/4.0’
+(as ‘lib’ is unspecified)
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/e1071_1.7-3.zip'
+Content type 'application/zip' length 1010582 bytes (986 KB)
+downloaded 986 KB
+
+package ‘e1071’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\GOOD\AppData\Local\Temp\Rtmpuwt8Yl\downloaded_packages
+> # model fit
+> set.seed(12345)
+> controlRF <- trainControl(method="cv", number=3, verboseIter=FALSE)
+> modFitRandForest <- train(classe ~ ., data=TrainSet, method="rf",
++                           trControl=controlRF)
+
+> modFitRandForest$finalModel
+Error: object 'modFitRandForest' not found
+> set.seed(12345)
+> controlRF <- trainControl(method="cv", number=3, verboseIter=FALSE)
+> modFitRandForest <- train(classe ~ ., data=TrainSet, method="rf",trControl=controlRF)
+
+> modFitRandForest 
+Error: object 'modFitRandForest' not found
+> modFitRandForest <- train(classe ~ ., data=TrainSet, method="rf",trControl=controlRF)
+> modFitRandForest 
+Random Forest 
+
+13737 samples
+   53 predictor
+    5 classes: 'A', 'B', 'C', 'D', 'E' 
+
+No pre-processing
+Resampling: Cross-Validated (3 fold) 
+Summary of sample sizes: 9158, 9158, 9158 
+Resampling results across tuning parameters:
+
+  mtry  Accuracy   Kappa    
+   2    0.9917740  0.9895943
+  27    0.9959234  0.9948433
+  53    0.9932300  0.9914362
+
+Accuracy was used to select the optimal model using the largest value.
+The final value used for the model was mtry = 27.
+> # prediction on Test dataset
+> predictRandForest <- predict(modFitRandForest, newdata=TestSet)
+> confMatRandForest <- confusionMatrix(predictRandForest, TestSet$classe)
+Error: `data` and `reference` should be factors with the same levels.
+> confMatRandForest <- confusionMatrix(predictRandForest, TestSet$classe)
+Error: `data` and `reference` should be factors with the same levels.
+> predictRandForest <- predict(modFitRandForest, newdata=TestSet)
+> confMatRandForest <- confusionMatrix(predictRandForest, TestSet$classe)
+Error: `data` and `reference` should be factors with the same levels.
+> confMatRandForest <- confusionMatrix(factor(predictRandForest), factor(TestSet$classe))
+> confMatRandForest
+Confusion Matrix and Statistics
+
+          Reference
+Prediction    A    B    C    D    E
+         A 1674    1    0    0    0
+         B    0 1138    3    0    0
+         C    0    0 1023    4    0
+         D    0    0    0  959    3
+         E    0    0    0    1 1079
+
+Overall Statistics
+                                          
+               Accuracy : 0.998           
+                 95% CI : (0.9964, 0.9989)
+    No Information Rate : 0.2845          
+    P-Value [Acc > NIR] : < 2.2e-16       
+                                          
+                  Kappa : 0.9974          
+                                          
+ Mcnemar's Test P-Value : NA              
+
+Statistics by Class:
+
+                     Class: A Class: B Class: C Class: D Class: E
+Sensitivity            1.0000   0.9991   0.9971   0.9948   0.9972
+Specificity            0.9998   0.9994   0.9992   0.9994   0.9998
+Pos Pred Value         0.9994   0.9974   0.9961   0.9969   0.9991
+Neg Pred Value         1.0000   0.9998   0.9994   0.9990   0.9994
+Prevalence             0.2845   0.1935   0.1743   0.1638   0.1839
+Detection Rate         0.2845   0.1934   0.1738   0.1630   0.1833
+Detection Prevalence   0.2846   0.1939   0.1745   0.1635   0.1835
+Balanced Accuracy      0.9999   0.9992   0.9981   0.9971   0.9985
+> # plot matrix results
+> plot(confMatRandForest$table, col = confMatRandForest$byClass, 
++      main = paste("Random Forest - Accuracy =",
++                   round(confMatRandForest$overall['Accuracy'], 4)))
+> # model fit
+> set.seed(12345)
+> modFitDecTree <- rpart(classe ~ ., data=TrainSet, method="class")
+> # prediction on Test dataset
+> predictDecTree <- predict(modFitDecTree, newdata=TestSet, type="class")
+> confMatDecTree <- confusionMatrix(predictDecTree, TestSet$classe)
+Error: `data` and `reference` should be factors with the same levels.
+> confMatDecTree <- confusionMatrix(factor(predictDecTree), factor(TestSet$classe))
+> confMatDecTree
+Confusion Matrix and Statistics
+
+          Reference
+Prediction    A    B    C    D    E
+         A 1496  234   51   86   12
+         B   57  646   40   34   24
+         C   23  148  886  187   18
+         D   72  108   49  583  104
+         E   26    3    0   74  924
+
+Overall Statistics
+                                          
+               Accuracy : 0.7706          
+                 95% CI : (0.7596, 0.7813)
+    No Information Rate : 0.2845          
+    P-Value [Acc > NIR] : < 2.2e-16       
+                                          
+                  Kappa : 0.7088          
+                                          
+ Mcnemar's Test P-Value : < 2.2e-16       
+
+Statistics by Class:
+
+                     Class: A Class: B Class: C Class: D Class: E
+Sensitivity            0.8937   0.5672   0.8635  0.60477   0.8540
+Specificity            0.9090   0.9673   0.9226  0.93233   0.9786
+Pos Pred Value         0.7962   0.8065   0.7021  0.63646   0.8997
+Neg Pred Value         0.9556   0.9030   0.9697  0.92332   0.9675
+Prevalence             0.2845   0.1935   0.1743  0.16381   0.1839
+Detection Rate         0.2542   0.1098   0.1506  0.09907   0.1570
+Detection Prevalence   0.3193   0.1361   0.2144  0.15565   0.1745
+Balanced Accuracy      0.9014   0.7673   0.8931  0.76855   0.9163
+> # plot matrix results
+> plot(confMatDecTree$table, col = confMatDecTree$byClass, 
++      main = paste("Decision Tree - Accuracy =",
++                   round(confMatDecTree$overall['Accuracy'], 4)))
+> # model fit
+> set.seed(12345)
+> controlGBM <- trainControl(method = "repeatedcv", number = 5, repeats = 1)
+> modFitGBM  <- train(classe ~ ., data=TrainSet, method = "gbm",
++                     trControl = controlGBM, verbose = FALSE)
+1 package is needed for this model and is not installed. (gbm). Would you like to try to install it now?
+1: yes
+2: no
+
+Selection: modFitGBM$finalModel1
+Enter an item from the menu, or 0 to exit
+Selection: 1
+Installing package into ‘C:/Users/GOOD/Documents/R/win-library/4.0’
+(as ‘lib’ is unspecified)
+Warning: unable to access index for repository https://cloud.r-project.org/src/contrib:
+  cannot open URL 'https://cloud.r-project.org/src/contrib/PACKAGES'
+Warning: unable to access index for repository https://cloud.r-project.org/bin/windows/contrib/4.0:
+  cannot open URL 'https://cloud.r-project.org/bin/windows/contrib/4.0/PACKAGES'
+Error: package gbm is required
+In addition: Warning message:
+package ‘gbm’ is not available (for R version 4.0.0) 
+> install.packages('gbm',repos='http://cran.us.r-project.org')
+Installing package into ‘C:/Users/GOOD/Documents/R/win-library/4.0’
+(as ‘lib’ is unspecified)
+also installing the dependency ‘gridExtra’
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/gridExtra_2.3.zip'
+Content type 'application/zip' length 1109230 bytes (1.1 MB)
+downloaded 1.1 MB
+
+trying URL 'http://cran.us.r-project.org/bin/windows/contrib/4.0/gbm_2.1.5.zip'
+Content type 'application/zip' length 1260074 bytes (1.2 MB)
+downloaded 1.2 MB
+
+package ‘gridExtra’ successfully unpacked and MD5 sums checked
+package ‘gbm’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+        C:\Users\GOOD\AppData\Local\Temp\Rtmpuwt8Yl\downloaded_packages
+> set.seed(12345)
+> controlGBM <- trainControl(method = "repeatedcv", number = 5, repeats = 1)
+> modFitGBM  <- train(classe ~ ., data=TrainSet, method = "gbm",
++                     trControl = controlGBM, verbose = FALSE)
+> modFitGBM$finalModel
+A gradient boosted model with multinomial loss function.
+150 iterations were performed.
+There were 53 predictors of which 53 had non-zero influence.
+> # prediction on Test dataset
+> predictGBM <- predict(modFitGBM, newdata=TestSet)
+> confMatGBM <- confusionMatrix(predictGBM, TestSet$classe)
+Error: `data` and `reference` should be factors with the same levels.
+> confMatGBM <- confusionMatrix(factor(predictGBM), factor(TestSet$classe))
+> confMatGBM
+Confusion Matrix and Statistics
+
+          Reference
+Prediction    A    B    C    D    E
+         A 1670    7    0    0    1
+         B    3 1119    9    6    4
+         C    0   10 1014   20    1
+         D    1    3    2  938    8
+         E    0    0    1    0 1068
+
+Overall Statistics
+                                          
+               Accuracy : 0.9871          
+                 95% CI : (0.9839, 0.9898)
+    No Information Rate : 0.2845          
+    P-Value [Acc > NIR] : < 2.2e-16       
+                                          
+                  Kappa : 0.9837          
+                                          
+ Mcnemar's Test P-Value : NA              
+
+Statistics by Class:
+
+                     Class: A Class: B Class: C Class: D Class: E
+Sensitivity            0.9976   0.9824   0.9883   0.9730   0.9871
+Specificity            0.9981   0.9954   0.9936   0.9972   0.9998
+Pos Pred Value         0.9952   0.9807   0.9703   0.9853   0.9991
+Neg Pred Value         0.9990   0.9958   0.9975   0.9947   0.9971
+Prevalence             0.2845   0.1935   0.1743   0.1638   0.1839
+Detection Rate         0.2838   0.1901   0.1723   0.1594   0.1815
+Detection Prevalence   0.2851   0.1939   0.1776   0.1618   0.1816
+Balanced Accuracy      0.9979   0.9889   0.9910   0.9851   0.9934
+> # plot matrix results
+> plot(confMatGBM$table, col = confMatGBM$byClass, 
++      main = paste("GBM - Accuracy =", round(confMatGBM$overall['Accuracy'], 4)))
+> 
+> predictTEST <- predict(modFitRandForest, newdata=testing)
+> predictTEST
+ [1] B A B A A E D B A A B C B A E E A B B B
+Levels: A B C D E
+
